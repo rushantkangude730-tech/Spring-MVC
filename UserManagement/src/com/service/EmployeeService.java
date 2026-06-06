@@ -12,11 +12,18 @@ public class EmployeeService {
 	@Autowired
 	public EmployeeDao employeeDao;
 	
-	public void createEmployee(Employee employee)
+	public String createEmployee(Employee employee)
 	{
 		System.out.println("Employee in service ---> " + employee);
 		
+		if(employee.getUsername().isEmpty())
+		{
+			return "error";
+		}
+		
 		employeeDao.createEmployee(employee);
+		
+		return "success";
 		
 	}
 

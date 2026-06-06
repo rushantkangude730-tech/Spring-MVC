@@ -18,8 +18,8 @@ public class EmployeeController {
 	public String registeration(@ModelAttribute Employee employee)
 	{	
 		System.out.println(employee);
-		employeeService.createEmployee(employee);
-		return "success";
+		String response = employeeService.createEmployee(employee);
+		return response;
 	}
 
 }
